@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails Livre</title>
+</head>
+<body>
+    <h1>Détails</h1>
+    <div>
+        <a th:text = "Liste" href="/livres"></a>
+    </div>
+
+    <table>
+        <tbody>
+        <tr>
+            <th th:text = "'Titre :'"></th>
+            <td th:text = "${livre.titre}"></td>
+        </tr>
+        <tr>
+            <th th:text = "'Auteur :'"></th>
+            <td th:text = "${livre.auteur}"></td>
+        </tr>
+         <tr>
+            <th th:text = "'Date Parution :'"></th>
+            <td th:text = "${#temporals.format(livre.dateParution, 'dd/MM/yyyy')}"></td>
+        </tr>
+        <tr>
+            <th th:text = "'Résumé :'"></th>
+            <td th:text = "${livre.resume}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
