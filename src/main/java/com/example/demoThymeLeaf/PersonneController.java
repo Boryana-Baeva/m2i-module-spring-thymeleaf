@@ -3,6 +3,7 @@ package com.example.demoThymeLeaf;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,5 +35,15 @@ public class PersonneController {
         ///model.addAttribute("personne", new Personne("James", "Bond", 33));
         model.addAttribute("personne", new Personne("Marie", "Dupond", 17));
         return "agepersonne";
+    }
+
+    @GetMapping("personne-form")
+    public String getForm() {
+        return "formulaire";
+    }
+
+    @PostMapping("personnes")
+    public void formulaire(Personne personne) {
+        System.out.println(personne);
     }
 }
