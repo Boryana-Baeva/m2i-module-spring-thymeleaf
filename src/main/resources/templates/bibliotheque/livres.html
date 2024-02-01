@@ -8,7 +8,7 @@
     <h1>Liste des Livres</h1>
     <ul>
         <li th:each="livre : ${livres}">
-            <a th:href="@{'/livres/' + ${livre.id}}">
+            <a th:href="@{'/detail?id=' + ${livre.id}}">
                 <span th:text="${livre.titre} + ' (' + ${livre.auteur} + ')'"></span>
             </a>
         </li>

@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -22,8 +23,8 @@ public class LivreController {
         return "bibliotheque/livres";
     }
 
-    @GetMapping("livres/{id}")
-    public String showDetailsLivre(@PathVariable("id") int id, Model model) {
+    @GetMapping("detail")
+    public String showDetailsLivre(@RequestParam int id, Model model) {
         Livre livre = bibliothequeService.getById(id);
         model.addAttribute("livre", livre);
 
