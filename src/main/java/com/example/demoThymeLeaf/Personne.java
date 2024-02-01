@@ -3,13 +3,15 @@ package com.example.demoThymeLeaf;
 public class Personne {
     private String prenom;
     private String nom;
+    private int age;
 
     public Personne() {
     }
 
-    public Personne(String prenom, String nom) {
+    public Personne(String prenom, String nom, int age) {
         this.prenom = prenom;
         this.nom = nom;
+        this.age = age;
     }
 
     public String getPrenom() {
@@ -26,5 +28,13 @@ public class Personne {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
